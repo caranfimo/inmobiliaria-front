@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-6">
+      <h2> Nueva propiedad </h2>
+    </div>
+    <div [formGroup]="estate" class="all">
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Nombre de la Propiedad</mat-label>
+        <input matInput formControlName="name" type="text" placeholder="Nombre de la Propiedad">
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">{{getErrorMessage('name')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Direccion de la Propiedad</mat-label>
+        <input matInput type="text" formControlName="address" placeholder="Direccion de la Propiedad">
+        <mat-error *ngIf="address.invalid && (address.dirty || address.touched)">{{getErrorMessage('address')}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Actividad Comercial</mat-label>
+        <mat-select formControlName="comercial_activity" placeholder="Actividad Comercial">
+          <mat-option *ngFor="let activity of comercialActivities" [value]="activity.name">{{ activity.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="comercial_activity.invalid && (comercial_activity.dirty || comercial_activity.touched)">
+          {{getErrorMessage('comercial_activity')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Costo de la Propiedad</mat-label>
+        <input matInput type="text" formControlName="cost" placeholder="Costo de la Propiedad">
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+        <mat-error *ngIf="cost.invalid && (cost.dirty || cost.touched)">{{getErrorMessage('cost')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12">
+          <mat-label>Tipo de Propiedad</mat-label>
+          <mat-select formControlName="estate_type" placeholder="Tipo de Propiedad">
+            <mat-option *ngFor="let types of estateTypes" [value]="types.name | currency">{{ types.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="estate_type.invalid && (estate_type.dirty || estate_type.touched)">{{getErrorMessage('country')}}
+          </mat-error>
+        </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12">
+        <mat-label>Pais</mat-label>
+        <mat-select formControlName="country" placeholder="Pais">
+          <mat-option *ngFor="let location of locations" [value]="location.country_name">{{ location.country_name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="country.invalid && (country.dirty || country.touched)">{{getErrorMessage('country')}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Estado/Departamento</mat-label>
+        <mat-select formControlName="state" placeholder="Estado/Departamento">
+          <mat-option *ngFor="let location of locations[0].states" [value]="location.name">{{ location.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="state.invalid && (state.dirty || state.touched)">{{getErrorMessage('state')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Ciudad</mat-label>
+        <mat-select formControlName="city" placeholder="Ciudad">
+          <mat-option *ngFor="let location of locations[0].states[1].city" [value]="location.name">{{ location.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="city.invalid && (city.dirty || city.touched)">{{getErrorMessage('city')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="description" placeholder="Descripción"></textarea>
+      </mat-form-field>
+
+      <h3 mat-subheader> Informacion del contacto</h3>
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="first_name" type="text" placeholder="Nombre de la Propiedad">
+        <mat-error *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)">{{getErrorMessage('first_name')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="last_name" type="text" placeholder="Nombre de la Propiedad">
+        <mat-error *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)">{{getErrorMessage('last_name')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Numero de telefono</mat-label>
+        <input matInput formControlName="phone_number" type="number" placeholder="Nombre de la Propiedad">
+        <mat-error *ngIf="phone_number.invalid && (phone_number.dirty || phone_number.touched)">{{getErrorMessage('phone_number')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Numero Celular</mat-label>
+        <input matInput formControlName="cellphone_number" type="number" placeholder="Numero de la Propiedad">
+        <mat-error *ngIf="cellphone_number.invalid && (cellphone_number.dirty || cellphone_number.touched)">{{getErrorMessage('cellphone_number')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+        <mat-label>Correo Electronico</mat-label>
+        <input matInput formControlName="mail" type="email" placeholder="Nombre de la Propiedad">
+        <mat-error *ngIf="mail.invalid && (mail.dirty || mail.touched)">{{getErrorMessage('mail')}}</mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <uploader class="col-sm-12"></uploader>
+
+    <button (click)="onSubmit()" mat-raised-button color="primary">Guardar</button>
+
+  </div>
+</div>

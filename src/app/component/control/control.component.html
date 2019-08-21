@@ -1,0 +1,54 @@
+<div class="container margin">
+  <div class="row">
+    <div class="col align-self-center">
+
+      
+      <div class="row margin">
+        <mat-chip-list>
+          <mat-chip (click)="filter=1" [selected]="filter==1">Vencidas</mat-chip>
+          <mat-chip (click)="filter=2" [selected]="filter==2">Hoy</mat-chip>
+          <mat-chip (click)="filter=3" [selected]="filter==3">Mañana</mat-chip>s
+        </mat-chip-list>
+        
+      </div>
+
+      <mat-form-field class="margin" appearance="outline">
+        <mat-label>Buscador</mat-label>
+        <input [(ngModel)]="name" matInput placeholder="Buscador">
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-hint>Ingresa nombre de la propiedad que quieres buscar</mat-hint>
+      </mat-form-field>
+
+      <div class="row  justify-content-center">
+        <button mat-fab (click)="selected=1" matTooltip="Propiedades"
+          aria-label="Button that displays a tooltip when focused or hovered over" color="primary">
+          <span class="icon-pin"></span>
+        </button>
+        <button mat-fab (click)="selected=2" matTooltip="Planes"
+          aria-label="Button that displays a tooltip when focused or hovered over" color="primary">
+          <span class="icon-checklist"></span>
+        </button>
+        <button mat-fab (click)="selected=3" matTooltip="Tareas"
+          aria-label="Button that displays a tooltip when focused or hovered over" color="primary">
+          <span class="icon-plan"></span>
+        </button>
+      </div>
+
+      <span [ngSwitch]="selected">
+        <div *ngSwitchCase="1">
+          <app-estates [name]="name "></app-estates>
+        </div>
+        <div *ngSwitchCase="2">
+          <app-plan></app-plan>
+        </div>
+        <div *ngSwitchCase="3">
+           <app-task [filterBy]="filter"></app-task>
+        </div>
+        <div *ngSwitchDefault>
+          Seleccione uno
+        </div>
+      </span>
+
+    </div>
+  </div>
+</div>

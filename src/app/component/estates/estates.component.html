@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div class="row justify-content-between header-margin">
+      <h2> Propiedades </h2>
+      <a mat-raised-button color="primary" [routerLink]="[ '/pwa/estates/create' ]" class="size align-self-center">Crear Nueva</a>
+  </div>
+  
+
+  <mat-divider></mat-divider>
+  <br>
+  <div class="row justify-content-md-center">
+    <mat-card class="col-sm-11 col-md-3 margin" *ngFor="let estate of filterEstates; let i = index">
+      <mat-card-header>
+        <mat-card-title>{{estate.name}}</mat-card-title>
+        <mat-card-subtitle>{{estate.address}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="estate.img_url" alt="Real estate photo"/>
+      <mat-card-content>
+        <p>
+          {{estate.description | slice:0:255}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="redirectTo(estate._id)">Ver mas</button>
+        <button mat-button (click)="deleteRealEstate(estate._id, i)">Eliminar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</div>

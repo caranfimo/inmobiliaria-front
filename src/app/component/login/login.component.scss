@@ -1,0 +1,17 @@
+.container > .row{
+    min-height: 100vh;
+}
+  
+  .header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .fill{
+      width: 95%;
+      height: 100px;
+  }
+
+  .fill  input{
+      font-size: 25px;
+  }

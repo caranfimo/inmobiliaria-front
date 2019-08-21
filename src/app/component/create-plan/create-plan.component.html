@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6">
+            <h2> Nuevo plan </h2>
+        </div>
+        <div [formGroup]="newPlan" class="all">
+            <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+                <mat-label>Nombre del plan</mat-label>
+                <input matInput formControlName="name" type="text" placeholder="Nombre del plan">
+                <!-- <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">{{getErrorMessage('name')}}</mat-error> -->
+            </mat-form-field>
+            <div formArrayName="tasks" *ngFor="let task of newPlan.get('tasks')?.controls; let i = index;">
+                <ng-container [formGroupName]="i">
+                    <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+                        <mat-label>Nombre de la tarea</mat-label>
+                        <input matInput formControlName="task_name" type="text" placeholder="Nombre de la tarea">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="col-sm-12">
+                        <mat-label>Descripción</mat-label>
+                        <textarea matInput formControlName="task_des" placeholder="Descripción"></textarea>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+                        <mat-label>Fecha de inicio</mat-label>
+                        <input matInput formControlName="start_date" [matDatepicker]="picker"
+                            placeholder="Fecha de inicio">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+                        <mat-label>Fecha de fin</mat-label>
+                        <input matInput formControlName="end_date" [matDatepicker]="picker2" placeholder="Fecha de fin">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field>
+
+                    <button (click)="changeInCharge(i)" mat-flat-button color="accent">
+                        Agregar otro encargado
+                    </button>
+
+                    <ng-container *ngIf="inCharge[i]">
+                        <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput formControlName="first_name" type="text" placeholder="Nombre de la tarea">
+                            <!-- <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">{{getErrorMessage('name')}}
+                                </mat-error> -->
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+                            <mat-label>Apellido</mat-label>
+                            <input matInput formControlName="last_name" type="text" placeholder="Nombre de la tarea">
+                            <!-- <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">{{getErrorMessage('name')}}
+                                    </mat-error> -->
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+                            <mat-label>Tipo de Documento</mat-label>
+                            <mat-select formControlName="id_type" placeholder="Actividad Comercial">
+                                <mat-option *ngFor="let type of id_types" [value]="type.name">
+                                    {{ type.name }}
+                                </mat-option>
+                            </mat-select>
+                            <!--                         <mat-error
+                                *ngIf="comercial_activity.invalid && (comercial_activity.dirty || comercial_activity.touched)">
+                                {{getErrorMessage('comercial_activity')}}</mat-error> -->
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-sm-12 col-lg-6">
+                            <mat-label>Numero de Documento</mat-label>
+                            <input matInput formControlName="id_number" type="text" placeholder="Nombre de la tarea">
+                            <!-- <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">{{getErrorMessage('name')}}
+                                            </mat-error> -->
+                        </mat-form-field>
+                    </ng-container>
+
+                    <mat-divider>
+                    </mat-divider>
+                </ng-container>
+
+            </div>
+            <button (click)="onSubmit()" mat-flat-button color="primary">
+                Crear
+            </button>
+            <button (click)="addTask()" mat-raised-button>
+                Agregar tarea
+            </button>
+        </div>
+    </div>
+</div>

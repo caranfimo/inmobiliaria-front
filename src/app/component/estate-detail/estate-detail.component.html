@@ -1,0 +1,58 @@
+<div *ngIf="estate" class="container">
+  <h2>{{ estate.name }}</h2>
+  <div class="size">
+    <img [src]="estate.img_url[0]" alt="">
+  </div>
+  <mat-list>
+    <mat-list-item>
+      <mat-icon>location_on</mat-icon>
+      <h3 mat-subheader>Precio, ubicacion y mas</h3>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+    <div class="fields">
+      <h4 mat-subheader> Precio </h4>
+      <p>
+        {{ estate.cost | currency }}
+      </p>
+      <h4 mat-subheader> Tipo de inmueble </h4>
+      <p>
+        {{ estate.estate_type }}
+      </p>
+      <h4 mat-subheader> Direccion </h4>
+      <p>
+        {{ estate.address }}
+      </p>
+      <h4 mat-subheader> Descripcion </h4>
+      <p>
+        {{ estate.description }}
+      </p>
+    </div>
+    <mat-list-item>
+      <mat-icon>supervised_user_circle</mat-icon>
+      <h3 mat-subheader>Informacion de contacto</h3>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+
+    <div class="fields" *ngFor="let contact of estate.contact_list">
+        <h4 mat-subheader> Nombre de contacto </h4>
+        <p>
+          {{ contact.first_name }} {{ contact.last_name }}
+        </p>
+        <h4 mat-subheader> Numero de contacto  </h4>
+        <p>
+          {{ contact.cellphone_number }}
+        </p>
+        <p>
+            {{ contact.phone_number }}
+        </p>
+        <h4 mat-subheader> Correo Electronico </h4>
+        <p>
+          {{ contact.mail }}
+        </p>
+    </div>
+
+    <button mat-raised-button color="primary"> Editar </button>
+    <button mat-raised-button color="warn"> Borrar </button>
+    
+  </mat-list>
+</div>

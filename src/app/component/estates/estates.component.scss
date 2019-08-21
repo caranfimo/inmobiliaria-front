@@ -1,0 +1,31 @@
+.card {
+    max-width: 285px;
+  }
+
+  img{
+    max-width: 285px;
+  }
+  
+  .margin{
+    margin: 15px 0 15px 15px;
+  }
+
+  .header-margin{
+    margin: 0 15px;
+  }
+
+  button.size{
+    height: 40px;
+    padding-left: 15px;
+  }
+  mat-card-content{
+    p{
+      max-width: 300px;
+    }
+  }
+
+  @media only screen and (max-width: 768px){
+    .margin{
+      margin: 15px 15px 15px 15px;
+    }
+  }

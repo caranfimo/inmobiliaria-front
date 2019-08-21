@@ -1,0 +1,98 @@
+<div class="container">
+  <h2 class="justify-content-center"> Modulo de Definiciones </h2>
+  <mat-divider></mat-divider>
+  <mat-list>
+    <h3 mat-subheader>Roles de Usuario</h3>
+
+    <mat-list-item *ngFor="let rol of rolTypes; let i = index">
+      <mat-icon mat-list-icon class="click" (click)="deleteUserDefinition(i)">delete</mat-icon>
+      <h4 mat-line>{{rol.name}}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nuevo rol</mat-label>
+        <input matInput [(ngModel)]="newRol" name="newRol" placeholder="Nuevo rol">
+        <mat-icon class="click" matSuffix (click)="setNewUserDefinition()">save</mat-icon>
+      </mat-form-field>
+    </mat-list-item>
+
+    <mat-divider></mat-divider>
+
+    <h3 mat-subheader>Tipos de inmuebles</h3>
+
+    <mat-list-item *ngFor="let type of estateTypes; let i = index">
+      <mat-icon mat-list-icon class="click" (click)="deleteEstateTypeDefinition(i)">delete</mat-icon>
+      <h4 mat-line>{{type.name}}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nuevo tipo de inmueble</mat-label>
+        <input matInput [(ngModel)]="newEstate" name="newEstate" placeholder="Nuevo tipo de inmueble">
+        <mat-icon class="click" matSuffix (click)="setNewEstateTypeDefinition()">save</mat-icon>
+      </mat-form-field>
+    </mat-list-item>
+
+    <mat-divider></mat-divider>
+
+    <h3 mat-subheader>Estados de los planes</h3>
+
+    <mat-list-item *ngFor="let type of planStates; let i = index">
+      <mat-icon mat-list-icon class="click" (click)="deletePlanStateDefinition(i)">delete</mat-icon>
+      <h4 mat-line>{{type.name}}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nuevo estado</mat-label>
+        <input matInput [(ngModel)]="newPlanState" name="newPlanState" placeholder="Nuevo estado">
+        <mat-icon class="click" matSuffix (click)="setNewPlanStateDefinition()">save</mat-icon>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+    <h3 mat-subheader>Actividades Comerciales</h3>
+
+    <mat-list-item *ngFor="let type of comercialActivities; let i = index">
+      <mat-icon mat-list-icon class="click" (click)="deleteComercialActivityDefinition(i)">delete</mat-icon>
+      <h4 mat-line>{{type.name}}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nueva actividad comercial</mat-label>
+        <input matInput [(ngModel)]="newComercialActivity" name="newComercialActivity" placeholder="Nueva actividad comercial">
+        <mat-icon class="click" matSuffix (click)="setNewComercialActivityDefinition()">save</mat-icon>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+    <h3 mat-subheader>Estados de usuarios</h3>
+
+    <mat-list-item *ngFor="let type of userStates; let i = index">
+      <mat-icon mat-list-icon class="click" (click)="deleteUserStateDefinition(i)">delete</mat-icon>
+      <h4 mat-line>{{type.name}}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nuevo tipo de inmueble</mat-label>
+        <input matInput [(ngModel)]="newUserState" name="newUserState" placeholder="Nuevo tipo de inmueble">
+        <mat-icon class="click" matSuffix (click)="setNewUserStateDefinition()">save</mat-icon>
+      </mat-form-field>
+    </mat-list-item>
+
+    <mat-divider></mat-divider>
+
+    <h3 mat-subheader>Estados de Tareas</h3>
+
+    <mat-list-item *ngFor="let type of taskStates; let i = index">
+      <mat-icon mat-list-icon class="click" (click)="deleteTaskStateDefinition(i)">delete</mat-icon>
+      <h4 mat-line>{{type.name}}</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nuevo Estado de tareas</mat-label>
+        <input matInput [(ngModel)]="newTaskState" name="newTaskState" placeholder="Nuevo Estado de tareas">
+        <mat-icon class="click" matSuffix (click)="setNewTaskStateDefinition()">save</mat-icon>
+      </mat-form-field>
+    </mat-list-item>
+
+  </mat-list>
+</div>
