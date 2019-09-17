@@ -104,7 +104,7 @@ export class CreateEstateComponent implements OnInit {
       estate_type: this.estate_type.value,
       comercial_activity: this.comercial_activity.value,
       cost: this.cost.value,
-      img_url: getImages.urls,
+      img_url: getImages?  getImages.urls : null,
       location: {
         country: this.country.value,
         state: this.state.value,
