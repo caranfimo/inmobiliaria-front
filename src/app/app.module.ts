@@ -51,7 +51,6 @@ import { UploaderComponent } from './component/uploader/uploader.component';
 import { UploadTaskComponent } from './component/upload-task/upload-task.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { PlanDetailsComponent } from './component/plan-details/plan-details.component';
-import { ManagementRolesComponent } from './component/management-roles/management-roles.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +75,6 @@ import { ManagementRolesComponent } from './component/management-roles/managemen
     UploadTaskComponent,
     ProfileComponent,
     PlanDetailsComponent,
-    ManagementRolesComponent,
   ],
   imports: [
     BrowserModule,
