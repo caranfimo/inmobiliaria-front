@@ -13,6 +13,7 @@ import { PlanComponent } from './component/plan/plan.component';
 import { CreateTaskComponent } from './component/create-task/create-task.component';
 import { CreatePlanComponent } from './component/create-plan/create-plan.component';
 import { ControlComponent } from './component/control/control.component';
+import { ManagementRolesComponent } from './component/management-roles/management-roles.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { PlanDetailsComponent } from './component/plan-details/plan-details.component';
 
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'plans', component: PlanComponent },
       { path: 'plans/create', component: CreatePlanComponent },
       { path: 'control', component: ControlComponent },
+      { path: 'roles', component: ManagementRolesComponent },
       { path: 'control/plan-detail/:id', component: PlanDetailsComponent },
       { path: '**', pathMatch: 'full', redirectTo: 'pwa' }
     ]
