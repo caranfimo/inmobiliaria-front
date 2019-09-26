@@ -15,6 +15,7 @@ import { CreatePlanComponent } from './component/create-plan/create-plan.compone
 import { ControlComponent } from './component/control/control.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { PlanDetailsComponent } from './component/plan-details/plan-details.component';
+import { ManagementRolesComponent } from './component/management-roles/management-roles.component';
 
 
 //Control de usuarios
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'plans', component: PlanComponent },
       { path: 'plans/create', component: CreatePlanComponent },
       { path: 'control', component: ControlComponent },
+      { path: 'roles', component: ManagementRolesComponent },
       { path: 'control/plan-detail/:id', component: PlanDetailsComponent },
       { path: '**', pathMatch: 'full', redirectTo: 'pwa' }
     ]
