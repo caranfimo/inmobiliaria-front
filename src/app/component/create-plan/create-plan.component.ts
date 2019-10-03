@@ -3,7 +3,7 @@ import { FormGroup, FormArray, Validators, FormBuilder } from '@angular/forms'
 import { Plan, Task } from '../../interfaces/app.interfaces'
 import { RoleGuardService } from '../../services/Auth/role-guard.service';
 import { ApiService } from '../../services/api.service'
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({

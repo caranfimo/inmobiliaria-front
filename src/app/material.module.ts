@@ -13,13 +13,15 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule } from '@angular/material';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu'
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatTableModule} from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
     imports:[
@@ -29,7 +31,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
         MatListModule, MatDialogModule, MatSelectModule, 
         MatRadioModule, MatDatepickerModule, MatNativeDateModule, MatMenuModule,
         MatProgressBarModule, MatSlideToggleModule, MatChipsModule, MatButtonToggleModule,
-        MatTooltipModule
+        MatTooltipModule, MatTableModule, MatRippleModule, MatCheckboxModule
     ],
     exports:[
         MatButtonModule,MatProgressSpinnerModule,
@@ -38,7 +40,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
         MatListModule, MatDialogModule, MatSelectModule, 
         MatRadioModule, MatDatepickerModule, MatNativeDateModule, MatMenuModule,
         MatProgressBarModule, MatSlideToggleModule, MatChipsModule, MatButtonToggleModule, 
-        MatTooltipModule
+        MatTooltipModule, MatTableModule, MatRippleModule, MatCheckboxModule
     ]
 })
 

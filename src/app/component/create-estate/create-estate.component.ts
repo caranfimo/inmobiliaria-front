@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Propiedad } from '../../interfaces/app.interfaces';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
